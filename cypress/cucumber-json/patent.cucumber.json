@@ -1,0 +1,50 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Verify Patents Page",
+    "line": 1,
+    "id": "verify-patents-page",
+    "tags": [],
+    "uri": "patent.feature",
+    "elements": [
+      {
+        "id": "verify-patents-page;verify-patents-page",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Verify Patents Page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "Launch the Patents url",
+            "result": {
+              "status": "undefined",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "The user clicks the cookies pop up",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "The user should see Patents hero",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
