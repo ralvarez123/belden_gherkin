@@ -13,7 +13,7 @@ Given('Launch the Patents url', () => {
   });
 });
 
-When('The user clicks the cookies pop up', () => {
+When('The user clicks the cookies pop up on Patents', () => {
   // Wait for cookie banner with timeout and retry
   console.log('Step: Launch the Patents url executed');
   cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 })
@@ -25,3 +25,5 @@ Then('The user should see Patents hero', () => {
   cy.get(SELECTORS.HERO_TITLE)
     .should('have.text', 'Patents')
 });
+
+

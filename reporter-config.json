@@ -1,0 +1,18 @@
+{
+  "reporterEnabled": "mocha-junit-reporter, mochawesome",
+  "mochaJunitReporterReporterOptions": {
+    "mochaFile": "cypress/results/junit/results.xml"
+  },
+  "mochawesomeReporterOptions": {
+    "reportDir": "cypress/results/mochawesome",
+    "overwrite": false,
+    "html": true,
+    "json": true,
+  "reportFilename": "[name]-[status]",
+  "timestamp": "yyyy-mm-dd_HH-MM-ss"
+  }
+}
+
+
+
+ 
