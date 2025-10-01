@@ -7,9 +7,9 @@ const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esb
 module.exports = defineConfig({
   e2e: {
     specPattern: "cypress/e2e/features/**/*.feature",
-   // baseUrl: 'https://redesign.belden.com/',
-    baseUrl: 'https://stage102.belden.com/',
-   // baseUrl: 'https://www.belden.com/',
+   baseUrl: 'https://redesign.belden.com/',
+    // baseUrl: 'https://stage102.belden.com/',
+   //baseUrl: 'https://www.belden.com/',
     //defaultCommandTimeout: 5000,
     
     // Retry configuration for flaky test handling
@@ -23,8 +23,8 @@ module.exports = defineConfig({
     { width: 834, height: 1024 }, // Tablet
     { width: 1280, height: 720 }, // Desktop
     { width: 1920, height: 1080 } // Full HD */
-    viewportWidth: 430,
-    viewportHeight: 932,
+    viewportWidth: 1280,
+    viewportHeight: 720,
     video: true, // Enable video recording
     videoUploadOnPasses: false, // Set to false if you don't want to upload videos on passing tests
     videosFolder: 'cypress/videos', // Specify the folder where videos are stored
