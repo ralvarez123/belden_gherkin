@@ -41,13 +41,13 @@ Then('The search suggestions are available', () => {
 });
 // results
 
-Then('Explore more products', () => {
+When('Explore more products', () => {
   // Wait for cookie banner with timeout and retry
   cy.get('.SearchModal__box--right > .SearchModal__link')
   .click()
 });
 
-Then('The user can see the results related', () => {
+When('The user can see the results related', () => {
   // More comprehensive hero section verification
   cy.get('.col-xl-3 > .row > .component > .CoveoQuerySummary > :nth-child(2)')
   .should('include.text', ' matching results');
@@ -63,7 +63,7 @@ Then('Product tab is activated', () => {
 
 
 //all
-Then('the user clicks on all tab', () => {
+When('the user clicks on all tab', () => {
   // Wait for cookie banner with timeout and retry
   cy.get('[tabindex="0"][data-ref=""]')
   .click()
@@ -76,7 +76,7 @@ Then('all tab is activated', () => {
 });
 
 //resources
-Then('the user clicks on resources tab', () => {
+When('the user clicks on resources tab', () => {
   // Wait for cookie banner with timeout and retry
   cy.get('[tabindex="0"][data-ref="Resources"]')
   .click()
@@ -89,7 +89,7 @@ Then('resources tab is activated', () => {
 });
 
 //other
-Then('the user clicks on other tab', () => {
+When('the user clicks on other tab', () => {
   // Wait for cookie banner with timeout and retry
   cy.get('[tabindex="0"][data-ref="Other"]')
   .click()
@@ -102,7 +102,7 @@ Then('other tab is activated', () => {
 });
 
 //blogs
-Then('the user clicks on blogs tab', () => {
+When('the user clicks on blogs tab', () => {
   // Wait for cookie banner with timeout and retry
   cy.get('[tabindex="0"][data-ref="Blogs"]')
   .click()
@@ -113,4 +113,3 @@ Then('blogs tab is activated', () => {
   cy.get('.tabs__content__inner__actions__item.active')
   .should('have.css', 'background-color', 'rgb(132, 50, 155)');
 });
-
