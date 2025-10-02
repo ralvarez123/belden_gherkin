@@ -16,7 +16,7 @@ cy.visit('/', {
   }); 
 });
 
-When('The user clicks the cookies pop up', () => {
+Given('The user clicks the cookies pop up', () => {
   // Wait for cookie banner with timeout and retry
   cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 })
     .click() 
@@ -38,5 +38,79 @@ Then('The search suggestions are available', () => {
   // More comprehensive hero section verification
   cy.get('.SearchModal__box--right > .SearchModal__heading')
   .should('include.text', 'cable');
+});
+// results
+
+Then('Explore more products', () => {
+  // Wait for cookie banner with timeout and retry
+  cy.get('.SearchModal__box--right > .SearchModal__link')
+  .click()
+});
+
+Then('The user can see the results related', () => {
+  // More comprehensive hero section verification
+  cy.get('.col-xl-3 > .row > .component > .CoveoQuerySummary > :nth-child(2)')
+  .should('include.text', ' matching results');
+  
+});
+
+Then('Product tab is activated', () => {
+  // More comprehensive hero section verification
+  cy.get('.tabs__content__inner__actions__item.active')
+  .should('have.css', 'background-color', 'rgb(132, 50, 155)');
+  
+});
+
+
+//all
+Then('the user clicks on all tab', () => {
+  // Wait for cookie banner with timeout and retry
+  cy.get('[tabindex="0"][data-ref=""]')
+  .click()
+});
+
+Then('all tab is activated', () => {
+  // More comprehensive hero section verification
+  cy.get('.tabs__content__inner__actions__item.active')
+  .should('have.css', 'background-color', 'rgb(132, 50, 155)');
+});
+
+//resources
+Then('the user clicks on resources tab', () => {
+  // Wait for cookie banner with timeout and retry
+  cy.get('[tabindex="0"][data-ref="Resources"]')
+  .click()
+});
+
+Then('resources tab is activated', () => {
+  // More comprehensive hero section verification
+  cy.get('.tabs__content__inner__actions__item.active')
+  .should('have.css', 'background-color', 'rgb(132, 50, 155)');
+});
+
+//other
+Then('the user clicks on other tab', () => {
+  // Wait for cookie banner with timeout and retry
+  cy.get('[tabindex="0"][data-ref="Other"]')
+  .click()
+});
+
+Then('other tab is activated', () => {
+  // More comprehensive hero section verification
+  cy.get('.tabs__content__inner__actions__item.active')
+  .should('have.css', 'background-color', 'rgb(132, 50, 155)');
+});
+
+//blogs
+Then('the user clicks on blogs tab', () => {
+  // Wait for cookie banner with timeout and retry
+  cy.get('[tabindex="0"][data-ref="Blogs"]')
+  .click()
+});
+
+Then('blogs tab is activated', () => {
+  // More comprehensive hero section verification
+  cy.get('.tabs__content__inner__actions__item.active')
+  .should('have.css', 'background-color', 'rgb(132, 50, 155)');
 });
 

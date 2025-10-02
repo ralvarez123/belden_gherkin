@@ -1,18 +1,9 @@
-Feature: Verify various pages
+Feature: regression test
 
   Scenario: Verify Home Page
     Given Launch the Home url
     When The user clicks the cookies pop up on Home
     Then The user should see Home hero
-
-  Scenario: Verify Blogs Page
-    Given Launch the Blogs url
-    When The user clicks the cookies pop up on Blogs
-    Then The user should see the Blogs hero
-
-  Scenario: User views a blog page
-    When I click on a blog
-    Then I should see the blog page
 
   Scenario: Verify Find Distributor Page
     Given Launch the Find Distributor url
@@ -24,6 +15,15 @@ Feature: Verify various pages
     When The user clicks the cookies pop up on Find an Installer
     Then The user should see the Find an Installer hero
 
+  Scenario: Verify Blogs Page
+    Given Launch the Blogs url
+    When The user clicks the cookies pop up on Blogs
+    Then The user should see the Blogs hero
+
+  Scenario: User views a blog page
+    When I click on a blog
+    Then I should see the blog page
+
   Scenario: Verify News Page
     Given Launch the News url
     When The user clicks the cookies pop up on News
@@ -34,15 +34,15 @@ Feature: Verify various pages
     When The user clicks the cookies pop up on Contact Us
     Then The user should see the Contact Us hero
 
-  Scenario: Verify Capabilities Page
-    Given Launch the Capabilities url
-    When The user clicks the cookies pop up on Capabilities
-    Then The user should see the Capabilities hero
+  Scenario: Verify Capabilities Page2
+    Given Launch the Capabilities url2
+    When The user clicks the cookies pop up on Capabilities2
+    Then The user should see the Capabilities hero2
 
-  Scenario: Verify Page Industries
-    Given Launch the Page Industries url
-    When The user clicks the cookies pop up on Page Industries
-    Then The user should see the Page Industries hero
+  Scenario: Verify Page Industries2
+    Given Launch the Page Industries url2
+    When The user clicks the cookies pop up on Page Industries2
+    Then The user should see the Page Industries hero2
 
   Scenario: Verify Page PCP
     Given Launch the Page PCP url

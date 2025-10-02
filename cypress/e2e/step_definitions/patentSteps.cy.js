@@ -18,7 +18,6 @@ cy.visit('/knowledge-hub/patents', {
 
 When('The user clicks the cookies pop up on Patents', () => {
   // Wait for cookie banner with timeout and retry
- console.log('Step: Launch the Patents url executed');
   cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 })
     .click() 
 });

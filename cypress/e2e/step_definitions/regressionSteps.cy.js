@@ -15,7 +15,6 @@ Given('Launch the Home url', () => {
 
 When('The user clicks the cookies pop up on Home', () => {
   // Wait for cookie banner with timeout and retry
-  console.log('Step: Launch the Patents url executed');
   cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 })
     .click()
 });
@@ -24,36 +23,6 @@ Then('The user should see Home hero', () => {
   // More comprehensive hero section verification
   cy.get(SELECTORS.HERO_TITLE)
     .should('have.text', "Connect to what's possible.")
-});
-
-// Scenario: Verify Blogs Page
-Given('Launch the Blogs url', () => {
-  cy.visit('/blog', {
-    timeout: 30000,
-    failOnStatusCode: false,
-  });
-});
-
-When('The user clicks the cookies pop up on Blogs', () => {
-  cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 }).click();
-});
-
-Then('The user should see the Blogs hero', () => {
-  cy.get('.last > .navigation-title > a').should('have.text', "Blog");
-});
-// Blogs redirection
-
-When('I click on a blog', () => {
-  // Wait for cookie banner with timeout and retry
-  console.log('Step: Launch the Patents URL executed');
-  
-  // Instead of clicking, directly visit the blog URL
-  cy.visit('/blog/5g-vs-6g-what-are-the-main-differences');
-});
-
-Then('I should see the blog page', () => {
-  // More comprehensive hero section verification
-  cy.get('.hero__caption').should('be.visible'); // Assert the header is visible
 });
 
 //   Scenario: Verify Find Distributor Page
@@ -67,7 +36,6 @@ Given('Launch the Find Distributor url', () => {
 
 When('The user clicks the cookies pop up on Find Distributor', () => {
   // Wait for cookie banner with timeout and retry
-  console.log('Step: Launch the Patents url executed');
   cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 })
     .click()
 });
@@ -90,7 +58,6 @@ Given('Launch the Find an Installer url', () => {
 
 When('The user clicks the cookies pop up on Find an Installer', () => {
   // Wait for cookie banner with timeout and retry
-  console.log('Step: Launch the Patents url executed');
   cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 })
     .click()
 });
@@ -100,6 +67,34 @@ Then('The user should see the Find an Installer hero', () => {
   cy.get('.last > .navigation-title > a')
     .should('have.text', "Find A Partner")
 });
+// Scenario: Verify Blogs Page
+Given('Launch the Blogs url', () => {
+  cy.visit('/blog', {
+    timeout: 30000,
+    failOnStatusCode: false,
+  });
+});
+
+When('The user clicks the cookies pop up on Blogs', () => {
+  cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 }).click();
+});
+
+Then('The user should see the Blogs hero', () => {
+  cy.get('.last > .navigation-title > a').should('have.text', "Blog");
+});
+// Blogs redirection
+
+When('I click on a blog', () => {
+  // Wait for cookie banner with timeout and retry
+  // Instead of clicking, directly visit the blog URL
+  cy.visit('/blog/5g-vs-6g-what-are-the-main-differences');
+});
+
+Then('I should see the blog page', () => {
+  // More comprehensive hero section verification
+  cy.get('.hero__caption').should('be.visible'); // Assert the header is visible
+});
+
 
 
 // Scenario: Verify News Page
@@ -135,34 +130,34 @@ Then('The user should see the Contact Us hero', () => {
 });
 
 // Scenario: Verify Capabilities Page
-Given('Launch the Capabilities url', () => {
+Given('Launch the Capabilities url2', () => {
   cy.visit('/solutions/capabilities', {
     timeout: 30000,
     failOnStatusCode: false,
   });
 });
 
-When('The user clicks the cookies pop up on Capabilities', () => {
+When('The user clicks the cookies pop up on Capabilities2', () => {
   cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 }).click();
 });
 
-Then('The user should see the Capabilities hero', () => {
+Then('The user should see the Capabilities hero2', () => {
   cy.get(SELECTORS.HERO_TITLE).should('have.text', "Capabilities");
 });
 
 // Scenario: Verify Page Industries
-Given('Launch the Page Industries url', () => {
+Given('Launch the Page Industries url2', () => {
   cy.visit('/solutions/industries', {
     timeout: 30000,
     failOnStatusCode: false,
   });
 });
 
-When('The user clicks the cookies pop up on Page Industries', () => {
+When('The user clicks the cookies pop up on Page Industries2', () => {
   cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 }).click();
 });
 
-Then('The user should see the Page Industries hero', () => {
+Then('The user should see the Page Industries hero2', () => {
   cy.get(SELECTORS.HERO_TITLE).should('have.text', "Industry Solutions");
 });
 
