@@ -100,3 +100,27 @@ Scenario: User sees the hero title
 
 /////////
 
+Feature: Verify search suggestions
+
+  
+
+ npx cypress run -e TAGS='@regression'
+
+  command to run headless on chrome 
+  npx cypress run --headless --browser chrome
+
+
+  Scenario: Our Industries
+    Then The user should see our industries section
+    When The user click on healthcare tab
+    Then The user should see healthcare info
+
+
+Scenario: learn more about healthcare
+    When The user click on learn more about healthcare
+    Then The user should see healthcare page
+
+
+Scenario: Our industries - Explore all industries
+    When The user click on explore all industries
+    Then The user should see industries pages

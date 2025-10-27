@@ -37,14 +37,13 @@ When('Type "cable" on search field', () => {
 Then('The search suggestions are available', () => {
   // More comprehensive hero section verification
   cy.get('.SearchModal__box--right > .SearchModal__heading')
-  .should('include.text', 'cable');
+  .should('include.text', 'cable')
 });
-// results
 
 When('Explore more products', () => {
   // Wait for cookie banner with timeout and retry
-  cy.get('.SearchModal__box--right > .SearchModal__link')
-  .click()
+  //cy.get('200000')
+  cy.get("button.SearchModal__button--search > span").click();
 });
 
 When('The user can see the results related', () => {
@@ -106,10 +105,11 @@ When('the user clicks on blogs tab', () => {
   // Wait for cookie banner with timeout and retry
   cy.get('[tabindex="0"][data-ref="Blogs"]')
   .click()
+
 });
 
 Then('blogs tab is activated', () => {
   // More comprehensive hero section verification
   cy.get('.tabs__content__inner__actions__item.active')
   .should('have.css', 'background-color', 'rgb(132, 50, 155)');
-});
+}); 

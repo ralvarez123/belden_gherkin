@@ -1,10 +1,11 @@
+@regression 
 Feature: regression test
 
   Scenario: Verify Home Page
     Given Launch the Home url
     When The user clicks the cookies pop up on Home
     Then The user should see Home hero
-
+@sanity
   Scenario: Verify Find Distributor Page
     Given Launch the Find Distributor url
     When The user clicks the cookies pop up on Find Distributor
@@ -14,7 +15,7 @@ Feature: regression test
     Given Launch the Find an Installer url
     When The user clicks the cookies pop up on Find an Installer
     Then The user should see the Find an Installer hero
-
+@sanity
   Scenario: Verify Blogs Page
     Given Launch the Blogs url
     When The user clicks the cookies pop up on Blogs
@@ -23,7 +24,7 @@ Feature: regression test
   Scenario: User views a blog page
     When I click on a blog
     Then I should see the blog page
-
+@sanity
   Scenario: Verify News Page
     Given Launch the News url
     When The user clicks the cookies pop up on News
@@ -88,7 +89,7 @@ Feature: regression test
     Given Launch the Sustainability url
     When The user clicks the cookies pop up on Sustainability
     Then The user should see the Sustainability hero
-
+@sanity
   Scenario: Verify Events Page
     Given Launch the Events url
     When The user clicks the cookies pop up on Events

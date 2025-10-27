@@ -68,41 +68,6 @@ export class BeldenPOM_BF {
       return cy.get('.cardIcon__container')
      }
 
-     // search locators
-     homePage(){
-      return cy.visit("https://redesign.belden.com");
-     }
-   
-     gloablSearch(){
-      return cy.get('.header__search-mobile-trigger');
-     }
-
-     typeSearch(){
-      return cy.get('.SearchModal__search-box');
-     }
-
-     searchSuggestion(){
-      return cy.get('.SearchModal__box--right > .SearchModal__heading');
-     }
-     
-     
-
-     // language locators
-   
-      language(){
-      return cy.get("nav.header__top li:nth-of-type(6) > span > span").click();
-      //cy.get(':nth-child(6) > .menu-top__link > .menu-top__link__inner');
-     }
-      
-     chooseLanguage(){
-      return cy.get("#\\{9EDDE0B6-C2D9-4B17-B405-D8BFF0BF9B01\\} > label").click();
-      
-     }
-
-            
-      wait(){
-         return cy.wait(4000);;
-        }
    }
 
 

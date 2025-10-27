@@ -319,7 +319,7 @@ When('The user clicks the cookies pop up on Events', () => {
 });
 
 Then('The user should see the Events hero', () => {
-  cy.get(SELECTORS.HERO_TITLE).should('have.text', "Events");
+  cy.get(SELECTORS.HERO_TITLE).should('have.text', "Events"); //when they publish the new page we have to change to Events only
 });
 
 

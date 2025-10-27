@@ -7,10 +7,12 @@ const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esb
 module.exports = defineConfig({
   e2e: {
     specPattern: "cypress/e2e/features/**/*.feature",
-   baseUrl: 'https://redesign.belden.com/',
-    // baseUrl: 'https://stage102.belden.com/',
-   //baseUrl: 'https://www.belden.com/',
-    //defaultCommandTimeout: 5000,
+    //baseUrl: 'https://condor-qa.belden.com/',
+    //baseUrl: 'https://redesign.belden.com/',
+    //baseUrl: 'https://stage102.belden.com/',
+    //baseUrl: 'https://deploy.belden.com/',
+    baseUrl: 'https://www.belden.com/',
+    //defaultCommandTimeout: 5000
     
     // Retry configuration for flaky test handling
     retries: {
@@ -23,6 +25,9 @@ module.exports = defineConfig({
     { width: 834, height: 1024 }, // Tablet
     { width: 1280, height: 720 }, // Desktop
     { width: 1920, height: 1080 } // Full HD */
+    /*Navigation
+    viewportWidth: 1080,
+    viewportHeight: 920, */
     viewportWidth: 1280,
     viewportHeight: 720,
     video: true, // Enable video recording
@@ -33,13 +38,17 @@ module.exports = defineConfig({
       // Generate a unique video file name using a timestamp
       const timestamp = new Date().toISOString().replace(/[name]/g, '-'); // Replace colons and dots for valid filename
       return `cypress-video-${timestamp}.mp4`;}, */
+      browser: "chrome",
       screenshotOnRunFailure: true, // Capture screenshots on failure
       reporter: "cypress-multi-reporters",
       reporterOptions: {
         configFile: "reporter-config.json"
       },
     // Cucumber preprocessor setup
-    
+    env: {
+      filterSpecs: true,
+      tags: ""
+    },
     
   setupNodeEvents: async (on, config) => {
       await addCucumberPreprocessorPlugin(on, config);

@@ -2,7 +2,7 @@ Feature: Happy path - Navigation
 
 Background:
     Given I visit the home
-    And I have accepted the cookie policy
+    And I have accepted the cookie policyy
     And go to menu option
 
   Scenario: Go home
@@ -31,3 +31,9 @@ Scenario: Go contact us
     When Close hamburger menu
     And The user clicks on support menu
     Then The user should see contact us page
+
+Scenario: Go Capbilities
+    When The user clicks on solutions tab
+    When The user clicks on capabilities
+    When The user clicks on explore all capabilities
+    Then The user should see capabilities page
