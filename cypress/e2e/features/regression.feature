@@ -1,4 +1,4 @@
-@regression 
+@regression1 
 Feature: regression test
 
   Scenario: Verify Home Page

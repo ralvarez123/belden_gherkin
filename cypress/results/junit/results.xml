@@ -1,45 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="172.245" tests="19" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-10-23T21:07:16" tests="0" file="cypress/e2e/features/regression.feature" time="0.000" failures="0">
+<testsuites name="Mocha Tests" time="274.674" tests="3" failures="3">
+  <testsuite name="Root Suite" timestamp="2025-11-05T15:26:36" tests="0" file="cypress/e2e/features/homeFindASolution.feature" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="regression test" timestamp="2025-10-23T21:07:16" tests="19" time="172.227" failures="0">
-    <testcase name="regression test Verify Home Page" time="16.334" classname="Verify Home Page">
+  <testsuite name="Happy path - Home Page" timestamp="2025-11-05T15:26:36" tests="3" time="274.660" failures="3">
+    <testcase name="Happy path - Home Page Find a solution" time="32.256" classname="Find a solution">
+      <failure message="Timed out after waiting `30000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `30000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `Users/rodrigo.alvarez/workspace/belden_gherkin/cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands." type="CypressError"><![CDATA[CypressError: Timed out after waiting `30000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `30000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `Users/rodrigo.alvarez/workspace/belden_gherkin/cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands.
+    at timedOutWaitingForPageLoad (https://stage102.belden.com/__cypress/runner/cypress_runner.js:130539:64)
+    at <unknown> (https://stage102.belden.com/__cypress/runner/cypress_runner.js:131524:16)
+    at tryCatcher (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1807:23)
+    at <unknown> (https://stage102.belden.com/__cypress/runner/cypress_runner.js:4186:41)
+    at tryCatcher (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1807:23)
+    at Promise._settlePromiseFromHandler (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1519:31)
+    at Promise._settlePromise (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1576:18)
+    at Promise._settlePromise0 (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1621:10)
+    at Promise._settlePromises (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1697:18)
+    at _drainQueueStep (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2407:12)
+    at _drainQueue (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2400:9)
+    at Async._drainQueues (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2416:5)
+    at Async.drainQueues (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2286:14)
+From Your Spec Code:
+    at Context.eval (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:226875:12)
+    at Registry.runStepDefininition (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:8506:48)
+    at Object.fn (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:14715:43)
+    at runStepWithLogGroup (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:14237:29)
+    at Context.eval (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:14711:62)]]></failure>
     </testcase>
-    <testcase name="regression test Verify Find Distributor Page" time="11.967" classname="Verify Find Distributor Page">
+    <testcase name="Happy path - Home Page change tab under find a solution" time="30.209" classname="change tab under find a solution">
+      <failure message="Timed out after waiting `30000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `30000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `Users/rodrigo.alvarez/workspace/belden_gherkin/cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands." type="CypressError"><![CDATA[CypressError: Timed out after waiting `30000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `30000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `Users/rodrigo.alvarez/workspace/belden_gherkin/cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands.
+    at timedOutWaitingForPageLoad (https://stage102.belden.com/__cypress/runner/cypress_runner.js:130539:64)
+    at <unknown> (https://stage102.belden.com/__cypress/runner/cypress_runner.js:131524:16)
+    at tryCatcher (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1807:23)
+    at <unknown> (https://stage102.belden.com/__cypress/runner/cypress_runner.js:4186:41)
+    at tryCatcher (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1807:23)
+    at Promise._settlePromiseFromHandler (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1519:31)
+    at Promise._settlePromise (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1576:18)
+    at Promise._settlePromise0 (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1621:10)
+    at Promise._settlePromises (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1697:18)
+    at _drainQueueStep (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2407:12)
+    at _drainQueue (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2400:9)
+    at Async._drainQueues (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2416:5)
+    at Async.drainQueues (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2286:14)
+From Your Spec Code:
+    at Context.eval (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:226875:12)
+    at Registry.runStepDefininition (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:8506:48)
+    at Object.fn (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:14715:43)
+    at runStepWithLogGroup (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:14237:29)
+    at Context.eval (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:14711:62)]]></failure>
     </testcase>
-    <testcase name="regression test Verify Find an Installer Page" time="17.264" classname="Verify Find an Installer Page">
-    </testcase>
-    <testcase name="regression test Verify Blogs Page" time="13.512" classname="Verify Blogs Page">
-    </testcase>
-    <testcase name="regression test User views a blog page" time="4.816" classname="User views a blog page">
-    </testcase>
-    <testcase name="regression test Verify News Page" time="6.207" classname="Verify News Page">
-    </testcase>
-    <testcase name="regression test Verify Contact Us Page" time="5.242" classname="Verify Contact Us Page">
-    </testcase>
-    <testcase name="regression test Verify Capabilities Page2" time="24.748" classname="Verify Capabilities Page2">
-    </testcase>
-    <testcase name="regression test Verify Page Industries2" time="8.731" classname="Verify Page Industries2">
-    </testcase>
-    <testcase name="regression test Verify Page PCP" time="4.088" classname="Verify Page PCP">
-    </testcase>
-    <testcase name="regression test Verify PLP Page" time="5.943" classname="Verify PLP Page">
-    </testcase>
-    <testcase name="regression test Verify PDP Page" time="6.270" classname="Verify PDP Page">
-    </testcase>
-    <testcase name="regression test Verify Services Page" time="7.653" classname="Verify Services Page">
-    </testcase>
-    <testcase name="regression test Verify Page Distributors" time="4.392" classname="Verify Page Distributors">
-    </testcase>
-    <testcase name="regression test Verify Knowledge Hub Page" time="5.394" classname="Verify Knowledge Hub Page">
-    </testcase>
-    <testcase name="regression test Verify Page Locations" time="6.635" classname="Verify Page Locations">
-    </testcase>
-    <testcase name="regression test Verify Automotive Manufacturing Page" time="6.078" classname="Verify Automotive Manufacturing Page">
-    </testcase>
-    <testcase name="regression test Verify Sustainability Page" time="5.941" classname="Verify Sustainability Page">
-    </testcase>
-    <testcase name="regression test Verify Events Page" time="5.650" classname="Verify Events Page">
+    <testcase name="Happy path - Home Page learn more of network resilience" time="30.190" classname="learn more of network resilience">
+      <failure message="Timed out after waiting `30000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `30000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `Users/rodrigo.alvarez/workspace/belden_gherkin/cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands." type="CypressError"><![CDATA[CypressError: Timed out after waiting `30000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `30000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `Users/rodrigo.alvarez/workspace/belden_gherkin/cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands.
+    at timedOutWaitingForPageLoad (https://stage102.belden.com/__cypress/runner/cypress_runner.js:130539:64)
+    at <unknown> (https://stage102.belden.com/__cypress/runner/cypress_runner.js:131524:16)
+    at tryCatcher (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1807:23)
+    at <unknown> (https://stage102.belden.com/__cypress/runner/cypress_runner.js:4186:41)
+    at tryCatcher (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1807:23)
+    at Promise._settlePromiseFromHandler (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1519:31)
+    at Promise._settlePromise (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1576:18)
+    at Promise._settlePromise0 (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1621:10)
+    at Promise._settlePromises (https://stage102.belden.com/__cypress/runner/cypress_runner.js:1697:18)
+    at _drainQueueStep (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2407:12)
+    at _drainQueue (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2400:9)
+    at Async._drainQueues (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2416:5)
+    at Async.drainQueues (https://stage102.belden.com/__cypress/runner/cypress_runner.js:2286:14)
+From Your Spec Code:
+    at Context.eval (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:226875:12)
+    at Registry.runStepDefininition (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:8506:48)
+    at Object.fn (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:14715:43)
+    at runStepWithLogGroup (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:14237:29)
+    at Context.eval (https://stage102.belden.com/__cypress/tests?p=cypress/e2e/features/homeFindASolution.feature:14711:62)]]></failure>
     </testcase>
   </testsuite>
 </testsuites>

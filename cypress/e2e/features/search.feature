@@ -1,3 +1,4 @@
+@regression
 Feature: Verify search suggestionsnn
 
 Scenario: Search Sugesstions

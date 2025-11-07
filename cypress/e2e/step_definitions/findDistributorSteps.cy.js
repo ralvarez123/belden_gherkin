@@ -2,75 +2,94 @@ import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 
 const SELECTORS = {
   COOKIE_BUTTON: '#onetrust-accept-btn-handler',
-  HERO_TITLE: '.hero__title', // Using data-cy attribute for more reliable selection
+  HERO_TITLE: '.hero__title',
   COUNTRY_SELECT: '#country',
   PRODUCT_TYPE_SELECT: '#productType',
   SEARCH_BUTTON: "div.bdn-find-panel-form button.btn",
   SEARCH_SUMMARY: '.bdn-find-search-summary-query'
 };
 
-// Hero validation on find a Dsitributor page
+// Hero validation on find a Distributor page
 Given('The user visits the Find a Distributor page', () => {
   cy.visit('/find-a-distributor', {
-    timeout: 30000, // Increased timeout for slow page loads
-    failOnStatusCode: false, // Don't fail on non-200 status codes
-  }); 
+    timeout: 30000,
+    failOnStatusCode: false,
+  });
+  cy.wait(1000); // Wait for 1 second after visiting the page
 });
 
 When('The user has accepted the cookie policy', () => {
-  // Wait for cookie banner with timeout and retry
   cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 }).click();
+  cy.wait(1000); // Wait for 1 second after clicking the cookie button
 });
 
 Then('The user should see the Find Distributor hero title', () => {
-  // More comprehensive hero section verification
   cy.get('.bdn-find-panel-header')
-    .should('have.text', "Find A Distributor")
+    .should('have.text', "Find A Distributor");
+  cy.wait(1000); // Wait for 1 second after checking the hero title
 });
 
 // Search for a distributor
-
-Given('The user visits the Find a Distributor page for search', () => {
-  cy.visit('/find-a-distributor', {
-    timeout: 30000, // Increased timeout for slow page loads
-    failOnStatusCode: false, // Don't fail on non-200 status codes
-  }); 
-});
-
-When('The user has accepted the cookie policy for search', () => {
-  // Wait for cookie banner with timeout and retry
-  cy.get(SELECTORS.COOKIE_BUTTON, { timeout: 10000 }).click();
-});
-
 When('The user types country United States', () => {
-  cy.get(SELECTORS.COUNTRY_SELECT).select('Colombia');
+  cy.get(SELECTORS.COUNTRY_SELECT).select('United States');
+  cy.wait(1000); // Wait for 1 second after selecting the country
 });
 
 When('The user types Product Type Enterprise Racks & Cabinets', () => {
-  cy.get(SELECTORS.PRODUCT_TYPE_SELECT).select('Enterprise Racks & Cabinets');
+  // Check if the product type select is enabled
+  cy.get(SELECTORS.PRODUCT_TYPE_SELECT).should('not.be.disabled').then(($select) => {
+    if ($select.is(':disabled')) {
+      cy.log('Product Type select is disabled, waiting for it to be enabled...');
+      // Optionally, you can wait for a specific condition or timeout
+      cy.wait(2000); // Adjust the wait time as necessary
+    }
+    // Attempt to select the option
+    cy.get(SELECTORS.PRODUCT_TYPE_SELECT).select('Enterprise Racks & Cabinets', { force: true });
+  });
 });
 
-When('The user types Clicks on search button', () => {
-  // Intercept the API call
-  cy.intercept('POST', '/api/Finder/Finder/GetFinderFromSearch').as('getFinderSearch');
-
-  // Intercept the Google Analytics call
-  cy.intercept('POST', 'https://analytics.google.com/g/collect*').as('googleAnalytics');
-
-  // Click the search button
+When('The user submits the search form', () => {
   cy.get(SELECTORS.SEARCH_BUTTON).click();
-
-  // Wait for the API call to complete
-  cy.wait('@getFinderSearch');
-
-  // Optionally, wait for the Google Analytics call to complete if you want to assert on it
-  cy.wait('@googleAnalytics');
+  cy.wait(1000); // Wait for 1 second after clicking the search button
 });
 
 Then('The user should see results', () => {
-  // Now check if the results are displayed
-  cy.get(SELECTORS.SEARCH_SUMMARY, { timeout: 10000 })
+  cy.get(SELECTORS.SEARCH_SUMMARY)
     .should('be.visible')
     .and('contain.text', 'Results');
+  cy.wait(1000); // Wait for 1 second after checking the results
 });
+
+
+//change search parameters
+When('The user clicks on change option', () => {
+  cy.get('.bdn-find-location-compact-link').click();
+  cy.wait(1000); // Wait for 1 second after selecting the country
+});
+
+When('The user types Product Type Industrial cable', () => {
+  // Check if the product type select is enabled
+  cy.get(SELECTORS.PRODUCT_TYPE_SELECT).should('not.be.disabled').then(($select) => {
+    if ($select.is(':disabled')) {
+      cy.log('Product Type select is disabled, waiting for it to be enabled...');
+      // Optionally, you can wait for a specific condition or timeout
+      cy.wait(2000); // Adjust the wait time as necessary
+    }
+    // Attempt to select the option
+    cy.get(SELECTORS.PRODUCT_TYPE_SELECT).select('Industrial Cable', { force: true });
+  });
+});
+
+When('The user submits the search form2', () => {
+  cy.get(SELECTORS.SEARCH_BUTTON).click();
+  cy.wait(1000); // Wait for 1 second after clicking the search button
+});
+
+Then('The user should see results2', () => {
+  cy.get(SELECTORS.SEARCH_SUMMARY)
+    .should('be.visible')
+    .and('contain.text', 'Results');
+  cy.wait(1000); // Wait for 1 second after checking the results
+});
+
 

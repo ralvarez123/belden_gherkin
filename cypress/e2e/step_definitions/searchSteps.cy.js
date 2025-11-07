@@ -43,7 +43,7 @@ Then('The search suggestions are available', () => {
 When('Explore more products', () => {
   // Wait for cookie banner with timeout and retry
   //cy.get('200000')
-  cy.get("button.SearchModal__button--search > span").click();
+  cy.visit("/search#q=cable&t=all-search&sort=relevancy")
 });
 
 When('The user can see the results related', () => {
@@ -52,6 +52,7 @@ When('The user can see the results related', () => {
   .should('include.text', ' matching results');
   
 });
+
 
 Then('Product tab is activated', () => {
   // More comprehensive hero section verification

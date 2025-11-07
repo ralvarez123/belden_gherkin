@@ -36,6 +36,6 @@
     }
   },
   "dependencies": {
-    "cypress": "13.13.0"
+    "cypress": "^13.13.0"
   }
 }
