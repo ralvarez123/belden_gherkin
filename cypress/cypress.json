@@ -1,4 +1,6 @@
 {
   "ignoreTestFiles": "*.js",
-  "testFiles": "**/*.{feature,features}"
+  "testFiles": "**/*.{feature,features}",
+  "chromeWebSecurity": false,
+  "experimentalSessionAndTabManagement": true
 }

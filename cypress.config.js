@@ -7,6 +7,7 @@ const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esb
 module.exports = defineConfig({
   e2e: {
     specPattern: "cypress/e2e/features/**/*.feature",
+    //baseUrl: 'https://condor-qa.belden.com/news-atomic/', //coveo
     //baseUrl: 'https://condor-qa.belden.com/',
     //baseUrl: 'https://redesign.belden.com/',
     //baseUrl: 'https://stage102.belden.com/',

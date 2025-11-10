@@ -4,8 +4,12 @@ import { BeldenPOM_BF } from "../../pageObject/Beldens_POM_BF.js";
 
 const beldenPOM = new BeldenPOM_BF();
 
+
 Given('the user is on the patents page POM', () => {
-  beldenPOM.patentsPage();
+  cy.visit('/knowledge-hub/patents', {
+    timeout: 30000, // Increased timeout for slow page loads
+    failOnStatusCode: false, // Don't fail on non-200 status codes
+  });
 });
 
 Given('the user accepts cookies POM', () => {

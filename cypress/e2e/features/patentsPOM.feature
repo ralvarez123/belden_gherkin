@@ -1,3 +1,4 @@
+ @sanity
  Feature: Patents Page
 
 Background:
