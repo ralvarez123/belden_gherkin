@@ -1,4 +1,4 @@
-@regression
+@atomic
 Feature: Verify search suggestionsnn
 
 

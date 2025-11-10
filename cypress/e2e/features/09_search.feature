@@ -1,4 +1,4 @@
-@regression @sanity @Stabilization
+@regression @sanity
 Feature: Verify search suggestionsnn
 
 Scenario: Search Sugesstions
